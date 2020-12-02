@@ -7,11 +7,14 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
-.get('/setCookie', (req, res) => {
-  res.status(302)
-    .cookie('amtoken','12341252423423', {
-        expires: new Date(Date.now() + 8 * 3600000)})
-    .send('set cookie successfully')
-    
+.get("/setCookie", (req, res) => {
+res
+.status(302)
+.cookie(
+"amtoken",
+"iwIIDe5qvxAFDR0Yvjf6bTAT84Q.*AAJTSQACMDIAAlNLABxlcTRZTEQ4bnZ1UGJubk01NzRRcjlWZWRoaW89AAR0eXBlAANDVFMAAlMxAAIwNA..*",
+{ httpOnly: true, secure: true }
+)
+.send("set cookie successfully");
 })
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+.listen(PORT, () => console.log(`Listening on ${ PORT }`))
